@@ -6,8 +6,8 @@ var emailVerificationCollection = new require("../model/emailVerification");
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
-		user: 'abrar.nodemailer@gmail.com',
-		pass: 'abrar123'
+		user: 'email_address@gmail.com',
+		pass: 'password'
 	}
 });
 
@@ -34,7 +34,7 @@ module.exports = function(app, express) {
 							}
 							else{
 								transporter.sendMail({
-									from: 'abrar.nodemailer@gmail.com',
+									from: 'sender_mail@gmail.com',
 									to: docs.email,
 									subject : "Please confirm your Email account",
 									html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+docs.link+">Click here to verify</a>"
